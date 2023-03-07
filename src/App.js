@@ -1,17 +1,16 @@
-import axios from 'axios'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import homePage from "./pages/home.js";
-import signInPage from "./pages/signIn.js";
-import signUpPage from "./pages/signUp.js";
+import SignInPage from "./pages/signIn.js";
+// import HomePage from "./pages/home.js";
+// import axios from 'axios'
+import SignUpPage from "./pages/signUp.js";
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/timeline" element={<homePage />} />
-        <Route path="/" element={<signInPage />} />
-        <Route path="/cadastro" element={<signUpPage/>} />
+        <Route path="/" element={<SignInPage />}/>
+        <Route path="/cadastro" element={<SignUpPage />} />
       </Routes>
     </BrowserRouter>
   );
