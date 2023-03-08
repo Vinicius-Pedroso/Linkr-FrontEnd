@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import SideBar from "../components/SideBar";
 import Post from "../components/Post";
+import Posts from "../components/Posts";
 
 export default function Timeline() {
   return (
@@ -12,6 +13,7 @@ export default function Timeline() {
         <Feed>
           <TL>timeline</TL>
           <Post />
+          <Posts/>
         </Feed>
         <SideBar />
       </Container>
@@ -28,7 +30,7 @@ const Container = styled.div`
 `;
 
 const Feed = styled.div`
-  /* background-color: red; */
+
 `;
 const TL = styled.p`
   font-family: "Oswald";
@@ -39,3 +41,4 @@ const TL = styled.p`
   color: #ffffff;
   margin-bottom: 20px;
 `;
+
