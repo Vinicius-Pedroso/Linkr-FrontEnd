@@ -3,15 +3,16 @@ import SignInPage from "./pages/signIn.js";
 import HomePage from "./pages/home.js";
 // import axios from 'axios'
 import SignUpPage from "./pages/signUp.js";
+import Timeline from "./pages/Timeline.js";
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/timeline" element={<HomePage />}/>
         <Route path="/" element={<SignInPage />}/>
         <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/timeline" element={<Timeline />} />
       </Routes>
     </BrowserRouter>
   );
