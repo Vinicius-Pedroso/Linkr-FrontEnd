@@ -67,12 +67,14 @@ export default function SignUpPage() {
 
 function SendSignUp(email, password, username, pictureUrl){
 
-  const UserLogin = {
+  const userSignUp = {
     email: email,
-    password: password
+    password: password,
+    username: username,
+    pictureUrl: pictureUrl
   }
 
-  const promise = axios.post(`https://projeto18-linkr-frontend-three.vercel.app/`, UserLogin)
+  const promise = axios.post(`https://linkr-backend3.onrender.com/signup";`, userSignUp)
   promise.catch(error => {
     alert("Cadastro não foi efetuado corretamente. Mais informações estão disponíveis no console")
     console.log(error)

@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SignInPage from "./pages/signIn.js";
+import SignInPage from "./pages/SignIn.js";
 import HomePage from "./pages/home.js";
 // import axios from 'axios'
-import SignUpPage from "./pages/signUp.js";
+import SignUpPage from "./pages/SignUp.js";
 import Timeline from "./pages/Timeline.js";
 
 

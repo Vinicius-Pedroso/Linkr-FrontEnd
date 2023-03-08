@@ -32,7 +32,8 @@ export default function SignInPage() {
           placeholder="password"
           required
         />
-        <button onClick={() => SendSignIn({email, password})}>
+        {/* <button onClick={() => SendSignIn({email, password})}> */}
+        <button>
           Log In
         </button>
 
@@ -49,6 +50,25 @@ export default function SignInPage() {
 
 function SendSignIn(email, password){
 
+  const userSignIn = {
+    email: email,
+    password: password,
+  }
+
+  const promise = axios.post(`https://linkr-backend3.onrender.com/signin";`, userSignIn)
+  promise.catch(error => {
+    alert("Login não foi efetuado corretamente. Mais informações estão disponíveis no console")
+    console.log(error)
+  })
+
+  return promise.then((response) => {
+    localStorage.setItem("User_Info", JSON.stringify(response.data))
+    if (response.data){
+        navigate("/timeline")
+    } else {
+        navigate("/")
+    }
+  });
 }
 
 const Body = styled.div`
