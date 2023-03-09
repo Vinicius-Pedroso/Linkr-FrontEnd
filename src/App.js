@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SignInPage from "./pages/signIn.js";
-// import HomePage from "./pages/home.js";
+import SignInPage from "./pages/SignIn.js";
+import HomePage from "./pages/home.js";
 // import axios from 'axios'
-import SignUpPage from "./pages/signUp.js";
+import SignUpPage from "./pages/SignUp.js";
 import Timeline from "./pages/Timeline.js";
 
 
@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SignInPage />}/>
-        <Route path="/cadastro" element={<SignUpPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
         <Route path="/timeline" element={<Timeline />} />
       </Routes>
     </BrowserRouter>
