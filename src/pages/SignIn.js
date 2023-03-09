@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import axios from 'axios'
 
 export default function SignInPage() {
 
@@ -48,7 +49,8 @@ export default function SignInPage() {
   )
 }
 
-function SendSignIn(email, password){
+async function SendSignIn(email, password){
+  const navigate = useNavigate();
 
   const userSignIn = {
     email: email,
