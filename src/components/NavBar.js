@@ -43,6 +43,8 @@ export default function NavBar() {
 
   }, [search])
 
+  console.log("test")
+
   return (
     <ContainerHeader>
       <p>linkr</p>

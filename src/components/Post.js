@@ -2,6 +2,7 @@ import teste from "../assets/img.jpg";
 import styled from "styled-components";
 
 export default function Post() {
+  console.log("test")
   return (
     <ContainerPost>
       <UserImage src={teste} />
