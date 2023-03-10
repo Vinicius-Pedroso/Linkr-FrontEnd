@@ -66,9 +66,8 @@ export default function SignUpPage() {
   )
 }
 
-async function SendSignUp(email, password, username, pictureUrl){
-
-  const navigate = useNavigate();
+async function SendSignUp({email, password, username, pictureUrl}){
+  // const navigate = useNavigate();
 
   const userSignUp = {
     email: email,
@@ -77,7 +76,9 @@ async function SendSignUp(email, password, username, pictureUrl){
     pictureUrl: pictureUrl
   }
 
-  const promise = axios.post(`https://linkr-backend3.onrender.com/signup";`, userSignUp)
+  console.log(userSignUp)
+
+  const promise = axios.post(`https://linkr-backend3.onrender.com/signup`, userSignUp)
   promise.catch(error => {
     alert("Cadastro não foi efetuado corretamente. Mais informações estão disponíveis no console")
     console.log(error)
@@ -85,11 +86,11 @@ async function SendSignUp(email, password, username, pictureUrl){
 
   return promise.then((response) => {
     localStorage.setItem("User_Info", JSON.stringify(response.data))
-    if (response.data){
-        navigate("/timeline")
-    } else {
-        navigate("/")
-    }
+    // if (response.data){
+    //     navigate("/timeline")
+    // } else {
+    //     navigate("/")
+    // }
   });
 }
 
