@@ -57,7 +57,7 @@ async function SendSignIn(email, password){
     password: password,
   }
 
-  const promise = axios.post(`https://linkr-backend3.onrender.com/signin";`, userSignIn)
+  const promise = axios.post(`https://linkr-backend3.onrender.com/signin`, userSignIn)
   promise.catch(error => {
     alert("Login não foi efetuado corretamente. Mais informações estão disponíveis no console")
     console.log(error)
@@ -163,3 +163,4 @@ const SignUpLink = styled.div`
   margin-top: 18px;
   }
 `;
+
