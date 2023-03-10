@@ -5,6 +5,7 @@ import { DebounceInput } from 'react-debounce-input';
 import { useState, useCallback, useEffect } from "react";
 import axios from "axios"
 import env from "react-dotenv";
+import { Link, useNavigate } from "react-router-dom"
 
 export default function NavBar() {
   const [search, setSearch] = useState("")
@@ -48,6 +49,7 @@ export default function NavBar() {
       <p>linkr</p>
       <Search>
         <DebounceInput
+          data-test="search"
           type="search"
           placeholder="Search for people"
           minLength={3}
@@ -56,10 +58,12 @@ export default function NavBar() {
         />
         <Results show={searchResults.length ? "flex" : "none"} >
           {searchResults.map((item) => (
-            <SingleResult>
-              <img src={item.image} alt={"foto de perfil do usuário"} />
-              <h1>{`${item.name}`}</h1>
-            </SingleResult>
+            <Link to={`/user/${item.id}`}>
+              <SingleResult data-test="user-search">
+                <img src={item.image} alt={"foto de perfil do usuário"} />
+                <h1>{`${item.name}`}</h1>
+              </SingleResult>
+            </Link>
           ))}
         </Results>
       </Search>
