@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export default function SideBar() {
+  console.log("test")
   return (
     <ContainerTrending>
       <Trending>
